@@ -1,0 +1,60 @@
+=======================git user configuration====================
+git config --global user.name "USERNAME"
+git config --global user.email "user@gmail.com"
+=======================pushing the code============================
+git init  --> used to create a .git folder(one time creation)
+git status -->It will list out all the new and modified file
+git add filename -->It will add the file to the staged changes
+git add . -->It will add all the files to the staged changes
+git commit -m "type msg" -->used to write the commit msg
+git remote add origin https://github.com/sanjaybabu123/sample_repo.git -->Used to add the remote github(one time configuration).)
+git push origin branchName --> used to push the code to the specific branch
+
+
+How to push changes from eclipse to github
+---------------------------------------
+1. do modification in eclipse and save
+2. go back to git bash
+3. enter the following commands
+
+  git status
+  git add .
+  git status
+  git commit -m "commit message"
+  git push origin "branch name"
+
+How to pull the changes from github to eclipse
+-----------------------------------------------
+
+ git pull origin "branchName" --->To pull the files from github to eclipse
+
+To create a new branch and push the changes
+-------------------------------------------
+
+1.git branch tyss --->To create a new branch
+2.git branch ---->To get the list of branches
+3.git diff branchName --->To check the difference between the branches.
+3.git checkout tyss -->To switch from one branch to another.
+                       do some changes in eclipse, save the changes, go back to git bash
+4.git status -->To check the changes happened
+5.git add . -->In order to move the files from unstaged area to staged area.
+6.git push origin tyss -->Push the code to branch tyss.
+
+
+git branch -d branchName--->to delete any perticular branch
+
+In order to merge the changes from branch tyss--->To Master
+---------------------------------------------
+
+1. git checkout master 
+2. git merge tyss
+3. git push origin master
+
+1. git log  ---> display all the commits.
+
+To clone or import the project:
+-------------------------------
+1. git clone gitURL
+
+
+

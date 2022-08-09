@@ -1,0 +1,69 @@
+clean the project target folder
+--------------------------------
+mvn clean
+
+validate the project
+--------------------
+mvn validate
+
+compile the project
+-------------------
+mvn compile
+
+execute all the testscript
+-----------------------
+mvn test
+
+execute particular testscript
+-----------------------------
+mvn test -Dtest=TESTSCRIPTNAME
+
+execute particular testNG file
+-------------------------------
+add dependency of testng with the version 6.9.8
+remove the scope tag
+copy the surefire plugin from below website https://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+In pom.xml create <build> and <plugins> tags under the <project> tag after that copy the <plugin> which you copied in above website
+
+mvn test
+
+
+send the data from cmd 
+-----------------------
+mvn test -Dbrowser=value1 -DURL=value2
+
+String browser=System.getProperty("browser");
+String url=System.getProperty("URL");
+
+
+invoke particular surefire-plugin
+---------------------------------
+in pom.xml add <profiles> and <profile> and <id>key for id</id> paste the surefire-plugin along with <build> tag
+open terminal --> mvn test -P KeyOfID
+
+create pacakage/jar file
+------------------------
+mvn package
+
+create jar file for particular script
+-------------------------------------
+mvn package -Dtest=TESTSCRIPTNAME
+
+create jar file for particular set of testng files(profiles)
+-------------------------------------------
+mvn package -P PROFILEID
+
+install dependencies/jar files from the global repo to local repo:-
+---------------------------------------------------
+mvn install
+
+
+create package and skip the execution of all testscripts:-
+-----------------------------------------------
+mvn package -DskipTests=true
+
+
+force update and install dependecies from global repo:-
+---------------------------------------------------
+mvn -U clean install
+
